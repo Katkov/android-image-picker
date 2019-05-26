@@ -144,6 +144,11 @@ public abstract class ImagePicker {
         return this;
     }
 
+    public ImagePicker doneBtnTitle(String doneBtnTitle) {
+        config.setDoneButtonTitle(doneBtnTitle);
+        return this;
+    }
+
     protected ImagePickerConfig getConfig() {
         return config;
     }

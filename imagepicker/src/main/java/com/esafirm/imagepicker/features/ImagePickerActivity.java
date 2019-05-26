@@ -163,6 +163,10 @@ public class ImagePickerActivity extends AppCompatActivity implements ImagePicke
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.image_picker_menu_main, menu);
+        if (config != null && config.getDoneButtonTitle() != null) {
+            MenuItem item = menu.findItem(R.id.menu_done);
+            item.setTitle(config.getDoneButtonTitle());
+        }
         return true;
     }
 

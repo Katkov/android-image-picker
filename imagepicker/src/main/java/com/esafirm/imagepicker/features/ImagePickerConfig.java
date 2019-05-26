@@ -27,6 +27,19 @@ public class ImagePickerConfig implements Parcelable {
 
     private ImageLoader imageLoader;
 
+
+    public String getDoneButtonTitle() {
+        return doneButtonTitle;
+    }
+
+
+    public void setDoneButtonTitle(String doneButtonTitle) {
+        this.doneButtonTitle = doneButtonTitle;
+    }
+
+
+    private String doneButtonTitle;
+
     public ImagePickerConfig() {
     }
 
@@ -148,6 +161,7 @@ public class ImagePickerConfig implements Parcelable {
         dest.writeByte(this.showCamera ? (byte) 1 : (byte) 0);
         dest.writeByte(this.returnAfterFirst ? (byte) 1 : (byte) 0);
         dest.writeSerializable(this.imageLoader);
+        dest.writeString(this.doneButtonTitle);
     }
 
     protected ImagePickerConfig(Parcel in) {
@@ -162,6 +176,7 @@ public class ImagePickerConfig implements Parcelable {
         this.showCamera = in.readByte() != 0;
         this.returnAfterFirst = in.readByte() != 0;
         this.imageLoader = (ImageLoader) in.readSerializable();
+        this.doneButtonTitle = in.readString();
     }
 
     public static final Creator<ImagePickerConfig> CREATOR = new Creator<ImagePickerConfig>() {

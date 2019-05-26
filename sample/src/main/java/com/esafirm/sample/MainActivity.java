@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 .returnAfterFirst(returnAfterCapture) // set whether pick action or camera action should return immediate result or not. Only works in single mode for image picker
                 .folderMode(folderMode) // set folder mode (false by default)
                 .folderTitle("Folder") // folder selection title
-                .imageTitle("Tap to select"); // image selection title
+                .imageTitle("Tap to select").doneBtnTitle("Feito"); // image selection title
+
 
         if (useCustomImageLoader) {
             imagePicker.imageLoader(new GrayscaleImageLoader());
